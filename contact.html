@@ -13,12 +13,20 @@
         type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Rosie</title>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("bzQViMr87PUlNU-4m");
+        })();
+    </script>
 </head>
 
 <body>
     <header>
         <div class="row no-gutters">
-            <a class="col-md-4 logo" href="02-index.html"></a>
+            <a class="col-md-4 logo" href="index.html"></a>
             <div class="col-md-8">
                 <div class="row no-gutters bg-color-name-title">
                     <div class="col heading">
@@ -28,20 +36,20 @@
                 </div>
                 <div class="row no-gutters">
                     <div class="col">
-                        <ul id="nav" class="list-inline menucontainer">
-                            <li class="col-6 col-sm-3 list-inline-item ui-menu-color-home menuitem">
+                        <ul id="nav" class="list-inline menucontainer row">
+                            <li class="col-6 col-sm-3 ui-menu-color-home menuitem">
                                 <a href="index.html" class="hvr-sweep-to-bottom"><i class="fa fa-home"
                                         aria-hidden="true"></i><span>Home</span></a>
                             </li>
-                            <li class="col-6 col-sm-3 list-inline-item ui-menu-color-resume menuitem">
+                            <li class="col-6 col-sm-3 ui-menu-color-resume menuitem">
                                 <a href="resume.html" class="hvr-sweep-to-bottom"><i class="fa fa-graduation-cap"
                                         aria-hidden="true"></i><span>Resume</span></a>
                             </li>
-                            <li class="col-6 col-sm-3 list-inline-item ui-menu-color-contact menuitem">
+                            <li class="col-6 col-sm-3 ui-menu-color-contact menuitem">
                                 <a href="contact.html" class="hvr-sweep-to-bottom"><i class="fa fa-comment-o"
                                         aria-hidden="true"></i><span>Contact</span></a>
                             </li>
-                            <li class="col-6 col-sm-3 list-inline-item ui-menu-color-download menuitem">
+                            <li class="col-6 col-sm-3 ui-menu-color-download menuitem">
                                 <a href="assets/cv/sample-cv.pdf" target="_blank" class="hvr-sweep-to-bottom"><i
                                         class="fa fa-download" aria-hidden="true"></i><span>Download CV</span></a>
                             </li>
@@ -56,9 +64,9 @@
             <div class="col">
                 <h3 class="contact-heading uppercase text-center">Got a project in mind?</h3>
                 <h5 class="uppercase text-center">Let's work together!</h5>
-    
+
                 <div class="center-form">
-                    <form>
+                    <form onsubmit="return sendMail(this);">
                         <input type="text" name="name" id="fullname" class="form-control" placeholder="Name" required />
                         <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Email"
                             required />
@@ -71,10 +79,10 @@
                         </div>
                     </form>
                 </div>
-    
+
             </div>
         </div>
-    
+
     </section>
     <footer class="container-fluid">
         <div id="footer-details" class="row">
@@ -138,6 +146,7 @@
             </div>
         </div>
     </footer>
+    <script src="assets/js/sendEmail.js"></script>
 </body>
 
 </html>
